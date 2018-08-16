@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center" id="top-bar">
+			<img src="/burger/public/assets/img/burger.jpg" alt="burger" />
+			<h1> Eat-Da-Burger! </h1>
+		</div>
+Ready to eat!
+<div class="col-md-6 text-center" class="task">
+<div class="row">
+{{#each burgerData}}
+  <pre>
+    {{#if this.devoured}}
+      <span>             <span>This burger was eaten: {{burger_name}}
+    {{else}}
+      {{burger_name}} 
+      <form action="/update/{{ id }}" method="post">
+      <button type="submit">Munch!</button>
+    </form> 
+    {{/if}}  
+  </pre>
+{{/each}}
+</div>
+</div>
+
+
+
+<form action="/create" method="post">
+  <textarea name="item" rows="2" cols="30"></textarea>
+  <button type="submit">Enter Your Burger</button>
+<form>
